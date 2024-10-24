@@ -1,131 +1,290 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-    <title>Lifestyle Vibes: Home Page</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+        <title>Lifestyle Vibes: Home Page</title>
 
-    <style>
-        .navbar-shadow {
-            box-shadow: 0 3px 5px #000000;
-        }
+        <style>
+            * {
+                box-sizing: border-box;
+            }
 
-        .nav-hover {
-            border-bottom: 0px solid transparent;
-            transition: 0.3s ease-in-out;
-        }
+            body {
+                overflow-x: hidden;
+            }
 
-        .nav-hover:hover {
-            text-shadow: 0 0 3px #f5f5f5, 0 0 5px #ffffff;
-            border-bottom: 1px solid #f5f5f5;
-            transform: translateY(-5px);
-        }
+            .container-fluid {
+                padding-left: 0;
+                padding-right: 0;
+            }
 
-        .container-333 {
-            background-color: #333;
-        }
+            .navbar-shadow {
+                box-shadow: 0 3px 5px #000000;
+            }
 
-        .custom-image {
-            width: 80%;
-            height: auto;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+            .nav-hover {
+                border-bottom: 1px solid transparent;
+                transition: 0.3s ease-in-out;
+            }
 
-        .custom-list {
-            width: 150px;
-            height: auto;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+            .navbar {
+                height: 10vh;
+            }
 
-        .container-center {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+            .nav-hover:hover {
+                text-shadow: 0 0 3px #f5f5f5, 0 0 5px #ffffff;
+                border-bottom: 1px solid #f5f5f5;
+                transform: translateY(-5px);
+            }
 
-        .rounded-image-list {
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-        }
+            .container-333 {
+                background-color: #333;
+            }
 
-        .scroll-container {
-            overflow-x: auto;
-        }
-    </style>
-</head>
-<body>
-    <nav class="navbar navbar-expand-sm navbar-shadow bg-dark sticky-top">
-        <div class="container">
-            <h1 class="h1 text-white">LF Vibes</h1>
-            <ul class="navbar-nav">
-                <li class="nav-item mx-2">
-                    <a class="nav-link nav-hover text-white" href="#">Home</a>
-                </li>
-                <li class="nav-item mx-2">
-                    <a class="nav-link nav-hover text-white" href="#">About</a>
-                </li>
-                <li class="nav-item mx-2">
-                    <a class="nav-link nav-hover text-white" href="#">Contact</a>
-                </li>
-                <li class="nav-item mx-2">
-                    <a class="nav-link nav-hover text-white" href="#">Subscribe</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-    <div class="container-fluid">
-        <div class="container py-5">
-            <h1 class="fw-bold text-center">Welcome to the Lifestyle Hub</h1>
-            <h5 class="text-secondary text-center">Explore trends, wellness, and living your best life</h5>
-            <div class="container my-5">
-                <a class="container-center" href="https://unsplash.com/">
-                    <img class="custom-image" src="../Image/Image-1.jpg" alt="image-1">
-                </a>
+            .custom-main-image {
+                width: 100%;
+                max-height: 90vh;
+                object-fit: cover;
+                object-position: center;
+            }
+
+            .custom-image {
+                width: 80%;
+            }
+
+            .custom-list {
+                width: 150px;
+                height: auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .container-center {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+            }
+
+            .rounded-image-list {
+                display: grid;
+                grid-template-columns: repeat(6, 1fr);
+            }
+
+            .scroll-container {
+                overflow-x: auto;
+            }
+
+            .text-shadow {
+                text-shadow: 0 3px 5px #333, 0 5px 7px #4f9355;
+            }
+
+            .form-width {
+                width: 100%;
+            }
+
+            .full-width {
+                width: 100%;
+            }
+
+            .custom-btn {
+                width: 100%;
+                height: 58px;
+                background: linear-gradient(to right, #333 20%, #d88d2b);
+                border: none;
+                outline: none;
+                font-weight: 500;
+                transition: 0.3s ease-in-out;
+            }
+
+            .container-hover {
+                transition: 0.3s ease-in-out;
+            }
+
+            .container-hover:hover {
+                background-color: #6f9a2a !important;
+                transform: translateY(-5px);
+            }
+
+            .position-relative {
+                position: relative;
+            }
+
+            .text-overlay {
+                width: 70%;
+                height: 50%;
+                z-index: 1;
+                box-shadow: 0 5px 20px #f5f5f5;
+                background-color: #3333337d;  
+                border-radius: 25px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            
+            .text-gray {
+                color: #cdcdcd;
+            }
+
+            .text-shadow-primary {
+                text-shadow: 0 3px 5px #f5f5f5, 0 5px 7px #aaa;
+            }
+
+            .text-shadow-secondary {
+                text-shadow: 0 3px 5px #333;
+            }
+
+            @media (max-width: 768px) {
+                .text-size-primary {
+                    font-size: 20px !important;
+                }
+            }
+
+            .rounded-top {
+                border-top-left-radius: 25px !important;
+                border-top-right-radius: 25px !important;
+            }
+        </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-md navbar-shadow bg-dark navbar-dark sticky-top">
+            <div class="container-md">
+                <h1 class="h1 text-white">LF Vibes</h1>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                    <ul class="navbar-nav ms-auto"">
+                        <li class="nav-item mx-2">
+                            <a class="nav-link nav-hover text-white" href="#">Home</a>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link nav-hover text-white" href="#">About</a>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link nav-hover text-white" href="#">Contact</a>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link nav-hover text-white" href="#">Subscribe</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container-fluid container-center position-relative mb-5">
+            <img class="custom-main-image reveal-top" src="../Image/Image-1.jpg" alt="image-1">
+            <div class="text-overlay position-absolute top-50 start-50 translate-middle text-white text-center reveal-bottom">
+                <h1 class="fw-bold text-shadow-primary text-size-primary reveal-bottom">Welcome to the Lifestyle Hub</h1>
+                <h5 class="text-gray text-shadow-secondary reveal-bottom">Explore trends, wellness, and living your best life</h5>
             </div>
         </div>
-    </div>
-    <div class="container-fluid bg-white">
-        <h1 class="fw-bold text-center pb-2">Keys to Balanced Lifestyle</h1>
-        <div class="container scroll-container">
-            <div class="container rounded-image-list">
-                <figure class="text-center">
-                    <img class="rounded-circle custom-list mx-auto" src="../Image/Image-2.jpg" alt="image-2">
-                    <figcaption class="text-center">Balance Lifestyle</figcaption>
-                </figure>
-                <figure class="text-center">
-                    <img class="rounded-circle custom-list mx-auto" src="../Image/Image-3.jpg" alt="image-3">
-                    <figcaption class="text-center">Embracing health</figcaption>
-                </figure>
-                <figure class="text-center">
-                    <img class="rounded-circle custom-list mx-auto" src="../Image/Image-4.jpg" alt="image-4">
-                    <figcaption class="text-center">Living in the moment</figcaption>
-                </figure>
-                <figure class="text-center">
-                    <img class="rounded-circle custom-list mx-auto" src="../Image/Image-5.jpg" alt="image-5">
-                    <figcaption class="text-center">Whether you're into fitness:</figcaption>
-                </figure>
-                <figure class="text-center">
-                    <img class="rounded-circle custom-list mx-auto" src="../Image/Image-5.jpg" alt="image-5">
-                    <figcaption class="text-center">Mindfulness</figcaption>
-                </figure>
-                <figure class="text-center">
-                    <img class="rounded-circle custom-list mx-auto" src="../Image/Image-5.jpg" alt="image-5">
-                    <figcaption class="text-center">Looking to elevate your daily routines</figcaption>
-                </figure>
+        
+        <div class="container-fluid bg-white my-5">
+            <h1 class="fw-bold text-center pb-2 reveal-right">Keys to Balanced Lifestyle</h1>
+            <div class="container scroll-container">
+                <div class="container rounded-image-list">
+                    <figure class="text-center reveal-left">
+                        <img class="rounded-circle custom-list mx-auto" src="../Image/Image-2.jpg" alt="image-2">
+                        <figcaption class="text-center">Balance Lifestyle</figcaption>
+                    </figure>
+                    <figure class="text-center reveal-left">
+                        <img class="rounded-circle custom-list mx-auto" src="../Image/Image-3.jpg" alt="image-3">
+                        <figcaption class="text-center">Embracing health</figcaption>
+                    </figure>
+                    <figure class="text-center reveal-left">
+                        <img class="rounded-circle custom-list mx-auto" src="../Image/Image-4.jpg" alt="image-4">
+                        <figcaption class="text-center">Living in the moment</figcaption>
+                    </figure>
+                    <figure class="text-center reveal-left">
+                        <img class="rounded-circle custom-list mx-auto" src="../Image/Image-5.jpg" alt="image-5">
+                        <figcaption class="text-center">Whether you're into fitness:</figcaption>
+                    </figure>
+                    <figure class="text-center reveal-left">
+                        <img class="rounded-circle custom-list mx-auto" src="../Image/Image-5.jpg" alt="image-5">
+                        <figcaption class="text-center">Mindfulness</figcaption>
+                    </figure>
+                    <figure class="text-center reveal-left">
+                        <img class="rounded-circle custom-list mx-auto" src="../Image/Image-5.jpg" alt="image-5">
+                        <figcaption class="text-center">Looking to elevate your daily routines</figcaption>
+                    </figure>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="container-fluid bg-success">
-        <div class="container">
-            <img class="py-5" src="../Image/Image-6.jpg" alt="image-6">
+        <div class="container-fluid container-hover bg-success reveal-bottom rounded-top">
+            <div class="container-md container-center py-5">
+                <h1 class="text-center text-white text-shadow fw-bold">Join Our Community</h1>
+                <img class="custom-image py-1 rounded" src="../Image/Image-6.jpg" alt="image-6">
+                <p class="text-white pt-3 px-5">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus recusandae sint ex, saepe facere architecto voluptatem vero officia quam, sed vitae deleniti, accusantium rerum quisquam excepturi quos adipisci quis laboriosam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima in perspiciatis quae ullam aut molestias ex porro blanditiis enim ipsa, expedita nostrum, eveniet reprehenderit numquam perferendis eligendi quibusdam error architecto?
+                </p>
+            </div>
         </div>
-    </div>
-</body>
+        <h1 class="h1 fw-bold text-center my-5">Get More Bennefit After Joining</h1>
+        <div class="container-fluid">
+            <div class="container container-center flex-container border my-1 py-2">
+                <form class="full-width" action="/action_page.php">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="form-floating mb-3 mt-3">
+                                <input type="text" class="form-control form-width" id="email" placeholder="Enter email" name="email">
+                                <label for="email">Email</label>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="form-floating mt-3 mb-3">
+                                <input type="text" class="form-control form-width" id="pwd" placeholder="Enter password" name="pswd">
+                                <label for="pwd">Password</label>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="mt-3 mb-3">
+                                <button type="submit" class="btn btn-dark custom-btn">Subscribe</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="container">
+
+            </div>
+        </div>
+        <script src="https://unpkg.com/scrollreveal"></script>
+        <script>
+            function revealfunction(){
+                window.sr = ScrollReveal({
+                    duration: 1300,
+                    distance: '350px',
+                    easing: 'ease-in-out'
+                });
+                sr.reveal('.reveal-bottom', {
+                    origin: 'bottom',
+                    reset: true
+                });
+                sr.reveal('.reveal-top', {
+                    origin: 'top',
+                    reset: true
+                });
+                sr.reveal('.reveal-left', {
+                    origin: 'left',
+                    reset: true
+                });
+                sr.reveal('.reveal-right', {
+                    origin: 'right',
+                    reset: true
+                });
+            }
+        
+            window.addEventListener('DOMContentLoaded', () => {
+                revealfunction();
+            });
+        </script>
+    </body>
 </html>
