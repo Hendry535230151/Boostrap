@@ -23,28 +23,61 @@
             background-color: rgb(255, 119, 0);
         }
 
+        .nav-hover {
+            border-bottom: 1px solid transparent;
+            transition: 0.3s ease-in-out;
+        }
+
+        .nav-hover:hover {
+            text-shadow: 0 0 3px #f5f5f5, 0 0 5px #ffffff;
+            border-bottom: 1px solid #f5f5f5;
+            transform: translateY(-5px);
+        }
+
+        .team-member {
+            transition: 0.3s ease-in-out;
+        }
+
         .team-member:hover {
             transform: scale(1.05);
         }
 
-        .contact-section {
-            background-color: #e9ecef;
-            padding: 50px 0;
-            text-align: center;
+        .mvp-member {
+            transition: 0.3s ease-in-out;
         }
 
-        .custom-btn {
-            background-color: #333;
-            border: none;
-            color: white;
-            padding: 10px 20px;
-            cursor: pointer;
+        .mvp-member:hover {
+            box-shadow: 0 3px 5px #333, 0 5px 7px #aaa;
         }
 
         .custom-btn:hover {
             background-color: #fbc02d;
             border: 1px solid #333;
             color: #333;
+        }
+
+        .center-profile {
+            object-position: center;
+            object-fit: cover;
+        }
+
+        .bg-dark-orange {
+            background-color: #ed845e;
+        }
+
+        .centering {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .rounded-all {
+            border-radius: 25px;
+        }
+
+        .minimum-height {
+            min-height: 250px;
         }
     </style>
 </head>
@@ -58,10 +91,10 @@
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item mx-2">
-                        <a class="nav-link nav-hover text-white" href="#">Home</a>
+                        <a class="nav-link nav-hover text-white" href="../Page/Home-Page.html">Home</a>
                     </li>
                     <li class="nav-item mx-2">
-                        <a class="nav-link nav-hover text-white" href="../Page/About-Page.html">About</a>
+                        <a class="nav-link nav-hover text-white" href="#">About</a>
                     </li>
                     <li class="nav-item mx-2">
                         <a class="nav-link nav-hover text-white" href="#">Contact</a>
@@ -74,35 +107,69 @@
         </div>
     </nav>
     <div class="container-fluid bg-dark py-5">
-        <div class="container-md text-white">
+        <div class="container-md text-white mb-5">
             <h1 class="h1 text-center fw-bold mb-5">About Us</h1>
             <p>Welcome to LF Vibes, where we strive to bring the best products and services to our customers. Our mission is to create innovative solutions that enhance everyday living while maintaining a commitment to sustainability and quality. With a passionate team dedicated to excellence, we aim to exceed expectations and foster long-lasting relationships with our clients. Join us on our journey to inspire and empower individuals through our unique offerings.</p>
         </div>
+        <div class="container-md">
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <div class="bg-white py-3 px-5 rounded-all minimum-height">
+                        <h3 class="h3 text-dark">Our Vision</h3>
+                        <p class="text-dark">To be the leading lifestyle platform, inspiring individuals to embrace a balanced and sustainable way of living through accessible fashion, health, and wellness.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="bg-white py-3 px-5 rounded-all minimum-height">
+                        <h3 class="h3 text-dark">Our Mission</h3>
+                        <ul class="text-dark">
+                            <li>Provide high-quality and sustainable lifestyle products that promote well-being and style.</li>
+                            <li>Empower our community with tips and guidance on achieving a healthy, active, and fashionable lifestyle.</li>
+                            <li>Promote eco-friendly practices and mindfulness in everyday choices.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#212529" fill-opacity="1" d="M0,128L0,128L41.1,128L41.1,224L82.3,224L82.3,160L123.4,160L123.4,64L164.6,64L164.6,64L205.7,64L205.7,320L246.9,320L246.9,256L288,256L288,96L329.1,96L329.1,32L370.3,32L370.3,128L411.4,128L411.4,64L452.6,64L452.6,288L493.7,288L493.7,32L534.9,32L534.9,160L576,160L576,288L617.1,288L617.1,96L658.3,96L658.3,288L699.4,288L699.4,64L740.6,64L740.6,128L781.7,128L781.7,64L822.9,64L822.9,128L864,128L864,160L905.1,160L905.1,256L946.3,256L946.3,320L987.4,320L987.4,160L1028.6,160L1028.6,192L1069.7,192L1069.7,160L1110.9,160L1110.9,288L1152,288L1152,64L1193.1,64L1193.1,192L1234.3,192L1234.3,224L1275.4,224L1275.4,96L1316.6,96L1316.6,288L1357.7,288L1357.7,96L1398.9,96L1398.9,32L1440,32L1440,0L1398.9,0L1398.9,0L1357.7,0L1357.7,0L1316.6,0L1316.6,0L1275.4,0L1275.4,0L1234.3,0L1234.3,0L1193.1,0L1193.1,0L1152,0L1152,0L1110.9,0L1110.9,0L1069.7,0L1069.7,0L1028.6,0L1028.6,0L987.4,0L987.4,0L946.3,0L946.3,0L905.1,0L905.1,0L864,0L864,0L822.9,0L822.9,0L781.7,0L781.7,0L740.6,0L740.6,0L699.4,0L699.4,0L658.3,0L658.3,0L617.1,0L617.1,0L576,0L576,0L534.9,0L534.9,0L493.7,0L493.7,0L452.6,0L452.6,0L411.4,0L411.4,0L370.3,0L370.3,0L329.1,0L329.1,0L288,0L288,0L246.9,0L246.9,0L205.7,0L205.7,0L164.6,0L164.6,0L123.4,0L123.4,0L82.3,0L82.3,0L41.1,0L41.1,0L0,0L0,0Z"></path></svg>
     <div class="container-fluid">
-        <div class="container-md team-section my-5">
+        <div class="container-md my-5">
             <h1 class="h1 text-center mb-5 fw-bold">Meet Our Team</h1>
             <div class="row">
                 <div class="col-md-4 text-center">
                     <div class="team-member">
-                        <img src="../Image/team1.jpg" class="img-fluid rounded-circle mb-3" alt="Team Member 1">
+                        <img src="../Image/Team/1.jpg" class="img-fluid rounded-circle mb-3" alt="Team Member 1">
                         <h5>John Doe</h5>
                         <p>Founder & CEO</p>
                     </div>
                 </div>
                 <div class="col-md-4 text-center">
                     <div class="team-member">
-                        <img src="../Image/team2.jpg" class="img-fluid rounded-circle mb-3" alt="Team Member 2">
+                        <img src="../Image/team/2.jpg" class="img-fluid rounded-circle mb-3" alt="Team Member 2">
                         <h5>Jane Smith</h5>
                         <p>Chief Marketing Officer</p>
                     </div>
                 </div>
                 <div class="col-md-4 text-center">
                     <div class="team-member">
-                        <img src="../Image/team3.jpg" class="img-fluid rounded-circle mb-3" alt="Team Member 3">
+                        <img src="../Image/team/3.jpg" class="img-fluid rounded-circle mb-3 center-profile" alt="Team Member 3">
                         <h5>Emily Johnson</h5>
                         <p>Head of Operations</p>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid pb-5">
+        <div class="container bg-dark-orange rounded-all team-member mvp-member">
+            <div class="row">
+                <div class="col-md-6 centering">
+                    <img src="../Image/team/4.jpg" class="img-fluid rounded-circle my-3 center-profile" alt="Team Member 4">
+                </div>
+                <div class="col-md-6 centering px-5">
+                    <h1 class="h1 fw-bold my-3">Out MVP</h1>
+                    <p class="text-white text-center">Meet our MVP, John Doe, the visionary behind Lifestyle Vibes. As the founder and CEO, John has been instrumental in driving the company's success and innovation. His leadership and dedication have helped us grow into the lifestyle brand we are today. With a passion for creating impactful solutions, John continues to inspire the team and lead the way toward a brighter future.</p>
                 </div>
             </div>
         </div>
