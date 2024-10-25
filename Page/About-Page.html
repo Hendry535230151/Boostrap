@@ -1,209 +1,350 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-    <script src="https://kit.fontawesome.com/1975de5d56.js" crossorigin="anonymous"></script>
-    <title>About Us - Lifestyle Vibes</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://kit.fontawesome.com/1975de5d56.js" crossorigin="anonymous"></script>
+        <title>Lifestyle Vibes: About Us Pages</title>
 
-    <style>
-        body {
-            overflow-x: hidden;
-            background-color: #f8f9fa;
-        }
+        <style>
+            * {
+                box-sizing: border-box;
+            }
 
-        .navbar-shadow {
-            box-shadow: 0 3px 5px #000000;
-        }
+            body {
+                overflow-x: hidden;
+                background-color: #f8f9fa;
+            }
 
-        .bg-orange {
-            background-color: rgb(255, 119, 0);
-        }
+            .navbar-shadow {
+                box-shadow: 0 3px 5px #000000;
+            }
 
-        .nav-hover {
-            border-bottom: 1px solid transparent;
-            transition: 0.3s ease-in-out;
-        }
+            .bg-orange {
+                background-color: rgb(255, 119, 0);
+            }
 
-        .nav-hover:hover {
-            text-shadow: 0 0 3px #f5f5f5, 0 0 5px #ffffff;
-            border-bottom: 1px solid #f5f5f5;
-            transform: translateY(-5px);
-        }
+            .nav-hover {
+                border-bottom: 1px solid transparent;
+                transition: 0.3s ease-in-out;
+            }
 
-        .team-member {
-            transition: 0.3s ease-in-out;
-        }
+            .nav-hover:hover {
+                text-shadow: 0 0 3px #f5f5f5, 0 0 5px #ffffff;
+                border-bottom: 1px solid #f5f5f5;
+                transform: translateY(-5px);
+            }
 
-        .team-member:hover {
-            transform: scale(1.05);
-        }
+            .team-member {
+                transition: 0.3s ease-in-out;
+            }
 
-        .mvp-member {
-            transition: 0.3s ease-in-out;
-        }
+            .team-member:hover {
+                transform: scale(1.05);
+            }
 
-        .mvp-member:hover {
-            box-shadow: 0 3px 5px #333, 0 5px 7px #aaa;
-        }
+            .mvp-member {
+                box-shadow: 0 3px 5px #aaa;
+                transition: 0.3s ease-in-out;
+            }
 
-        .custom-btn:hover {
-            background-color: #fbc02d;
-            border: 1px solid #333;
-            color: #333;
-        }
+            .mvp-member:hover {
+                box-shadow: 0 3px 5px #333, 0 5px 7px #aaa;
+            }
 
-        .center-profile {
-            object-position: center;
-            object-fit: cover;
-        }
+            .bg-dark-orange {
+                background-color: #f5f5f5;
+            }
 
-        .bg-dark-orange {
-            background-color: #ed845e;
-        }
+            .form-width {
+                width: 100%;
+            }
 
-        .centering {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
+            .centering {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
 
-        .rounded-all {
-            border-radius: 25px;
-        }
+            .rounded-all {
+                border-radius: 25px;
+            }
 
-        .minimum-height {
-            min-height: 250px;
-        }
-    </style>
-</head>
-<body>
-    <nav class="navbar navbar-expand-md navbar-shadow bg-dark navbar-dark sticky-top">
-        <div class="container-md">
-            <h1 class="h1 text-white">LF Vibes</h1>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-            <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item mx-2">
-                        <a class="nav-link nav-hover text-white" href="../Page/Home-Page.html">Home</a>
-                    </li>
-                    <li class="nav-item mx-2">
-                        <a class="nav-link nav-hover text-white" href="#">About</a>
-                    </li>
-                    <li class="nav-item mx-2">
-                        <a class="nav-link nav-hover text-white" href="#">Contact</a>
-                    </li>
-                    <li class="nav-item mx-2">
-                        <a class="nav-link nav-hover text-white" href="#">Subscribe</a>
-                    </li>
-                </ul>
+            .minimum-height {
+                min-height: 250px;
+                box-shadow: 0 3px 5px #aaa, 0 5px 10px #f5f5f5;
+            }
+
+            .ms-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+
+            .custom-btn {
+                width: 100%;
+                height: 58px;
+                background-color: #333;
+                border: none;
+                outline: none;
+                font-weight: 500;
+                transition: 0.3s ease-in-out;
+            }
+                
+            .container-center {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+            }
+
+            .custom-btn:hover {
+                background-color: rgb(255, 119, 0);
+            }
+
+            .text-shadow-secondary {
+                text-shadow: 0 3px 5px #333;
+            }
+
+            .resize-text {
+                font-size: 15px;
+                color: #333;
+            }
+
+            .custom-image {
+                width: 80%;
+            }
+
+            .text-size {
+                font-size: 20px;
+            }
+
+            .text-shadow-primary {
+                text-shadow: 0 3px 5px #aaa, 0 5px 7px #f5f5f5;
+            }
+
+            .container-center {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+            }
+
+            .full-width {
+                width: 100%;
+            }
+
+            .rounded-top {
+                border-top-left-radius: 25px !important;
+                border-top-right-radius: 25px !important;
+            }
+
+            @media (max-width: 992px) {
+                .resize {
+                    width: 200px !important;
+                    height: 200px !important;
+                } 
+
+                .resize-text {
+                    font-size: 12px;
+                }
+            }
+
+            @media (max-width: 576px) {
+                .ms-grid {
+                    grid-template-columns: 1fr;
+                    grid-template-rows: repeat(2, 1fr);
+                }
+            }
+
+        </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-md navbar-shadow bg-dark navbar-dark sticky-top">
+            <div class="container-md">
+                <h1 class="h1 text-white">LF Vibes</h1>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item mx-2">
+                            <a class="nav-link nav-hover text-white" href="../Page/index.html">Home</a>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link nav-hover text-white" href="#">About</a>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link nav-hover text-white" href="#contact">Contact</a>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link nav-hover text-white" href="#subscribe">Subscribe</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container-fluid bg-dark py-5">
+            <div class="container-md text-white mb-5">
+                <h1 class="h1 text-center fw-bold mb-5 text-shadow-primary reveal-top">About Us</h1>
+                <p class="reveal-bottom">Welcome to LF Vibes, where we strive to bring the best products and services to our customers. Our mission is to create innovative solutions that enhance everyday living while maintaining a commitment to sustainability and quality. With a passionate team dedicated to excellence, we aim to exceed expectations and foster long-lasting relationships with our clients. Join us on our journey to inspire and empower individuals through our unique offerings.</p>
+            </div>
+            <div class="container-md ms-grid">
+                <div class="bg-white py-3 px-5 rounded-all minimum-height reveal-left">
+                    <h3 class="h3 text-dark">Our Vision</h3>
+                    <p class="text-dark">To be the leading lifestyle platform, inspiring individuals to embrace a balanced and sustainable way of living through accessible fashion, health, and wellness.</p>
+                </div>
+                <div class="bg-white py-3 px-5 rounded-all minimum-height reveal-right">
+                    <h3 class="h3 text-dark">Our Mission</h3>
+                    <ul class="text-dark">
+                        <li>Provide high-quality and sustainable lifestyle products that promote well-being and style.</li>
+                        <li>Empower our community with tips and guidance on achieving a healthy, active, and fashionable lifestyle.</li>
+                        <li>Promote eco-friendly practices and mindfulness in everyday choices.</li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </nav>
-    <div class="container-fluid bg-dark py-5">
-        <div class="container-md text-white mb-5">
-            <h1 class="h1 text-center fw-bold mb-5">About Us</h1>
-            <p>Welcome to LF Vibes, where we strive to bring the best products and services to our customers. Our mission is to create innovative solutions that enhance everyday living while maintaining a commitment to sustainability and quality. With a passionate team dedicated to excellence, we aim to exceed expectations and foster long-lasting relationships with our clients. Join us on our journey to inspire and empower individuals through our unique offerings.</p>
-        </div>
-        <div class="container-md">
-            <div class="row">
-                <div class="col-md-6 mb-3">
-                    <div class="bg-white py-3 px-5 rounded-all minimum-height">
-                        <h3 class="h3 text-dark">Our Vision</h3>
-                        <p class="text-dark">To be the leading lifestyle platform, inspiring individuals to embrace a balanced and sustainable way of living through accessible fashion, health, and wellness.</p>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#212529" fill-opacity="1" d="M0,96L65.5,128L130.9,32L196.4,256L261.8,160L327.3,96L392.7,32L458.2,64L523.6,32L589.1,64L654.5,256L720,64L785.5,96L850.9,96L916.4,224L981.8,256L1047.3,192L1112.7,160L1178.2,128L1243.6,96L1309.1,160L1374.5,256L1440,128L1440,0L1374.5,0L1309.1,0L1243.6,0L1178.2,0L1112.7,0L1047.3,0L981.8,0L916.4,0L850.9,0L785.5,0L720,0L654.5,0L589.1,0L523.6,0L458.2,0L392.7,0L327.3,0L261.8,0L196.4,0L130.9,0L65.5,0L0,0Z"></path></svg>
+        <div class="container-fluid">
+            <div class="container-md my-5">
+                <h1 class="h1 text-center mb-5 fw-bold reveal-top">Meet Our Team</h1>
+                <div class="row">
+                    <div class="col-md-4 text-center">
+                        <div class="team-member reveal-bottom">
+                            <img src="../Image/Team/1.jpg" class="img-fluid rounded-circle mb-3 resize" alt="Team Member 1">
+                            <h5>John Doe</h5>
+                            <p>Founder & CEO</p>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="bg-white py-3 px-5 rounded-all minimum-height">
-                        <h3 class="h3 text-dark">Our Mission</h3>
-                        <ul class="text-dark">
-                            <li>Provide high-quality and sustainable lifestyle products that promote well-being and style.</li>
-                            <li>Empower our community with tips and guidance on achieving a healthy, active, and fashionable lifestyle.</li>
-                            <li>Promote eco-friendly practices and mindfulness in everyday choices.</li>
-                        </ul>
+                    <div class="col-md-4 text-center">
+                        <div class="team-member reveal-bottom">
+                            <img src="../Image/team/2.jpg" class="img-fluid rounded-circle mb-3 resize" alt="Team Member 2">
+                            <h5>Jane Smith</h5>
+                            <p>Chief Marketing Officer</p>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#212529" fill-opacity="1" d="M0,128L0,128L41.1,128L41.1,224L82.3,224L82.3,160L123.4,160L123.4,64L164.6,64L164.6,64L205.7,64L205.7,320L246.9,320L246.9,256L288,256L288,96L329.1,96L329.1,32L370.3,32L370.3,128L411.4,128L411.4,64L452.6,64L452.6,288L493.7,288L493.7,32L534.9,32L534.9,160L576,160L576,288L617.1,288L617.1,96L658.3,96L658.3,288L699.4,288L699.4,64L740.6,64L740.6,128L781.7,128L781.7,64L822.9,64L822.9,128L864,128L864,160L905.1,160L905.1,256L946.3,256L946.3,320L987.4,320L987.4,160L1028.6,160L1028.6,192L1069.7,192L1069.7,160L1110.9,160L1110.9,288L1152,288L1152,64L1193.1,64L1193.1,192L1234.3,192L1234.3,224L1275.4,224L1275.4,96L1316.6,96L1316.6,288L1357.7,288L1357.7,96L1398.9,96L1398.9,32L1440,32L1440,0L1398.9,0L1398.9,0L1357.7,0L1357.7,0L1316.6,0L1316.6,0L1275.4,0L1275.4,0L1234.3,0L1234.3,0L1193.1,0L1193.1,0L1152,0L1152,0L1110.9,0L1110.9,0L1069.7,0L1069.7,0L1028.6,0L1028.6,0L987.4,0L987.4,0L946.3,0L946.3,0L905.1,0L905.1,0L864,0L864,0L822.9,0L822.9,0L781.7,0L781.7,0L740.6,0L740.6,0L699.4,0L699.4,0L658.3,0L658.3,0L617.1,0L617.1,0L576,0L576,0L534.9,0L534.9,0L493.7,0L493.7,0L452.6,0L452.6,0L411.4,0L411.4,0L370.3,0L370.3,0L329.1,0L329.1,0L288,0L288,0L246.9,0L246.9,0L205.7,0L205.7,0L164.6,0L164.6,0L123.4,0L123.4,0L82.3,0L82.3,0L41.1,0L41.1,0L0,0L0,0Z"></path></svg>
-    <div class="container-fluid">
-        <div class="container-md my-5">
-            <h1 class="h1 text-center mb-5 fw-bold">Meet Our Team</h1>
-            <div class="row">
-                <div class="col-md-4 text-center">
-                    <div class="team-member">
-                        <img src="../Image/Team/1.jpg" class="img-fluid rounded-circle mb-3" alt="Team Member 1">
-                        <h5>John Doe</h5>
-                        <p>Founder & CEO</p>
-                    </div>
-                </div>
-                <div class="col-md-4 text-center">
-                    <div class="team-member">
-                        <img src="../Image/team/2.jpg" class="img-fluid rounded-circle mb-3" alt="Team Member 2">
-                        <h5>Jane Smith</h5>
-                        <p>Chief Marketing Officer</p>
-                    </div>
-                </div>
-                <div class="col-md-4 text-center">
-                    <div class="team-member">
-                        <img src="../Image/team/3.jpg" class="img-fluid rounded-circle mb-3 center-profile" alt="Team Member 3">
-                        <h5>Emily Johnson</h5>
-                        <p>Head of Operations</p>
+                    <div class="col-md-4 text-center">
+                        <div class="team-member reveal-bottom">
+                            <img src="../Image/team/3.jpg" class="img-fluid rounded-circle mb-3 resize" alt="Team Member 3">
+                            <h5>Emily Johnson</h5>
+                            <p>Head of Operations</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="container-fluid pb-5">
-        <div class="container bg-dark-orange rounded-all team-member mvp-member">
-            <div class="row">
-                <div class="col-md-6 centering">
-                    <img src="../Image/team/4.jpg" class="img-fluid rounded-circle my-3 center-profile" alt="Team Member 4">
-                </div>
-                <div class="col-md-6 centering px-5">
-                    <h1 class="h1 fw-bold my-3">Out MVP</h1>
-                    <p class="text-white text-center">Meet our MVP, John Doe, the visionary behind Lifestyle Vibes. As the founder and CEO, John has been instrumental in driving the company's success and innovation. His leadership and dedication have helped us grow into the lifestyle brand we are today. With a passion for creating impactful solutions, John continues to inspire the team and lead the way toward a brighter future.</p>
+        <div class="container-fluid pb-5">
+            <div class="container bg-dark-orange rounded-all team-member mvp-member reveal-left">
+                <div class="row">
+                    <div class="col-md-6 centering p-3">
+                        <img src="../Image/team/4.jpg" class="img-fluid rounded-circle my-3 resize" alt="Team Member 4">
+                    </div>
+                    <div class="col-md-6 centering px-5">
+                        <h1 class="h1 fw-bold mb-3 text-shadow-secondary ">Out MVP</h1>
+                        <p class="text-center resize-text mb-3">Meet our MVP, John Doe, the visionary behind Lifestyle Vibes. As the founder and CEO, John has been instrumental in driving the company's success and innovation. His leadership and dedication have helped us grow into the lifestyle brand we are today. With a passion for creating impactful solutions, John continues to inspire the team and lead the way toward a brighter future.</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="container contact-section">
-        <h2>Get in Touch</h2>
-        <p>We'd love to hear from you! If you have any questions, feel free to reach out.</p>
-        <button class="custom-btn" onclick="window.location.href='contact.html'">Contact Us</button>
-    </div>
-    <footer class="container-fluid bg-orange text-white py-4">
-        <div class="container text-center">
-            <a class="mx-2 text-hover text-white text-decoration-none" href="#">
-                <i class="fa-brands fa-twitter"></i>
-            </a>
-            <a class="mx-2 text-hover text-white text-decoration-none" href="#">
-                <i class="fa-brands fa-instagram"></i>
-            </a>
-            <a class="mx-2 text-hover text-white text-decoration-none" href="#">
-                <i class="fa-brands fa-youtube"></i>
-            </a>
-            <a class="mx-2 text-hover text-white text-decoration-none" href="#">
-                <i class="fa-brands fa-tiktok"></i>
-            </a>
-            <a class="mx-2 text-hover text-white text-decoration-none" href="#">
-                <i class="fa-brands fa-facebook"></i>
-            </a>
-            <p class="my-3">
-                <a class="text-white text-hover text-decoration-none" href="#">PRIVACY & POLICY</a> 
-                |
-                <a class="text-white text-hover text-decoration-none" href="#">TERMS OF US</a>
-            </p>
-            <p>&copy; 2024 Lifestyle Vibes. All rights reserved.</p>
+        <div id="subscribe" class="container-fluid container-hover bg-dark rounded-top">
+            <div class="container-md container-center pb-5">
+                <h1 class="text-center text-white text-shadow-primary fw-bold reveal-top my-5">Join Our Community</h1>
+                <img class=" img-thumbnail custom-image mb-3 rounded reveal-bottom" src="../Image/Image-6.jpg" alt="image-6">
+                <p class="text-white text-size my-3 px-5 reveal-bottom">
+                    Our community is more than just a membership—it's a lifestyle. Whether you're passionate about fashion, wellness, or personal growth, joining us will open doors to a curated world of inspiration and exclusive opportunities. We believe in living life to the fullest and supporting each other along the way.
+                </p>
+                <p class="text-white text-size my-3 px-5 reveal-bottom">
+                    As part of our community, you'll stay up-to-date with the latest trends, receive expert advice tailored to your interests, and enjoy access to special perks designed just for you. Ready to elevate your lifestyle?
+                </p>
+            </div>
         </div>
-    </footer>
- 
-</body>
+        <h1 class="fw-bold text-center my-5 reveal-top">Input The Form</h1>
+        <div class="container-fluid pb-5 reveal-top">
+            <div class="container container-center border my-1 py-2">
+                <form class="full-width" action="/action_page.php">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="form-floating mb-3 mt-3">
+                                <input type="email" class="form-control form-width" id="email" placeholder="Enter email" name="email" required>
+                                <label for="email">Email</label>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="form-floating mt-3 mb-3">
+                                <input type="password" class="form-control form-width" id="pwd" placeholder="Enter password" name="pswd" required>
+                                <label for="pwd">Password</label>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="mt-3 mb-3">
+                                <button type="submit" class="btn btn-dark custom-btn">Subscribe</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <footer id="contact" class="container-fluid bg-orange text-white py-4 reveal-bottom">
+            <div class="container text-center">
+                <a class="mx-2 text-hover text-white text-decoration-none" href="https://twitter.com/login">
+                    <i class="fa-brands fa-twitter"></i>
+                </a>
+                <a class="mx-2 text-hover text-white text-decoration-none" href="https://www.instagram.com/accounts/login/">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a class="mx-2 text-hover text-white text-decoration-none" href="https://www.youtube.com/account?hl=id">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+                <a class="mx-2 text-hover text-white text-decoration-none" href="https://www.tiktok.com/login">
+                    <i class="fa-brands fa-tiktok"></i>
+                </a>
+                <a class="mx-2 text-hover text-white text-decoration-none" href="https://m.facebook.com/login/?locale=id_ID&refsrc=deprecated">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+                <p class="my-3">
+                    <a class="text-white text-hover text-decoration-none" href="#">PRIVACY & POLICY</a> 
+                    |
+                    <a class="text-white text-hover text-decoration-none" href="#">TERMS OF US</a>
+                    <br>
+                    <a class="text-white text-hover text-decoration-none" href="mailto:someone@gmail.com">someone@gmail.com</a>
+                    |
+                    <a class="text-white text-hover text-decoration-none" href="tel:+6280000000000">+6280000000000</a>
+                </p>
+                <p>&copy; 2024 Lifestyle Vibes. All rights reserved.</p>
+            </div>
+        </footer>
+        <script src="https://unpkg.com/scrollreveal"></script>
+        <script>
+            function revealfunction(){
+                window.sr = ScrollReveal({
+                    duration: 1300,
+                    distance: '200px',
+                    easing: 'ease-in-out'
+                });
+                sr.reveal('.reveal-bottom', {
+                    origin: 'bottom',
+                    reset: false
+                });
+                sr.reveal('.reveal-top', {
+                    origin: 'top',
+                    reset: false
+                });
+                sr.reveal('.reveal-left', {
+                    origin: 'left',
+                    reset: false
+                });
+                sr.reveal('.reveal-right', {
+                    origin: 'right',
+                    reset: false
+                });
+            }
+        
+            window.addEventListener('DOMContentLoaded', () => {
+                revealfunction();
+            });
+        </script>
+    </body>
 </html>

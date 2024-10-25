@@ -5,7 +5,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
         <script src="https://kit.fontawesome.com/1975de5d56.js" crossorigin="anonymous"></script>
         <title>Lifestyle Vibes: Home Page</title>
 
@@ -189,7 +188,7 @@
             .image-grid {
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);
-                grid-template-rows: repeat(6, 1fr);
+                grid-template-rows: repeat(2, 1fr), auto;
                 gap: 10px;
             }
 
@@ -199,14 +198,77 @@
                 object-fit: cover;
                 object-position: center;
             }
+            
+            .img-grid-size-1 {
+                width: 200px;
+                height: 200px;
+                object-fit: cover;
+                object-position: center;
+            }
 
             .container-fluid{
                 overflow: hidden;
             }
 
+            .fill {
+                background-color: #ea6a3c;
+                min-height: 150px;
+            }
+
+            .overlay {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: #333333b7;
+                z-index: 2; 
+            }
+
+            .content-box {
+                background-color: #fff;
+                border-radius: 10px;
+                padding: 30px;
+                width: 500px; 
+                text-align: center;
+                box-shadow: 0 5px 10px #333;
+            }
+
+            .merge {
+                grid-column: 3 span;
+            }
+
+            .text-size-secondary {
+                font-size: 20px;
+            }
+
+            .min-margin {
+                margin-bottom: -25px;
+            }
+            
             @media (max-width: 768px) {
                 .text-size-primary {
                     font-size: 20px !important;
+                }
+
+                .text-size-secondary {
+                    font-size: 12px;
+                }
+            }
+            
+            @media (max-width: 576px) {
+                .image-grid {
+                    display: grid;
+                    grid-template-columns: repeat(2, minmax(100px, 1fr));
+                    grid-template-rows: repeat(3, 200px), auto;
+                    gap: 10px;
+                }
+
+                .merge {
+                    grid-column: 2 span;
                 }
             }
 
@@ -228,10 +290,10 @@
                             <a class="nav-link nav-hover text-white" href="../Page/About-Page.html">About</a>
                         </li>
                         <li class="nav-item mx-2">
-                            <a class="nav-link nav-hover text-white" href="#">Contact</a>
+                            <a class="nav-link nav-hover text-white" href="#contact">Contact</a>
                         </li>
                         <li class="nav-item mx-2">
-                            <a class="nav-link nav-hover text-white" href="#">Subscribe</a>
+                            <a class="nav-link nav-hover text-white" href="#subscribe">Subscribe</a>
                         </li>
                     </ul>
                 </div>
@@ -239,44 +301,16 @@
         </nav>
         <div class="container-fluid container-center position-relative">
             <img class="custom-main-image reveal-top" src="../Image/Image-1.jpg" alt="image-1">
-            <div class="text-overlay position-absolute top-50 start-50 translate-middle text-white text-center reveal-bottom">
+            <div class="text-overlay position-absolute top-50 start-50 translate-middle text-white text-center reveal-bottom p-3">
                 <h1 class="fw-bold text-shadow-primary text-size-primary reveal-bottom">Welcome to the Lifestyle Hub</h1>
-                <h5 class="text-gray text-shadow-secondary reveal-bottom">Explore trends, wellness, and living your best life</h5>
+                <h5 class="text-gray text-shadow-secondary reveal-bottom text-size-secondary">Explore trends, wellness, and living your best life</h5>
             </div>
         </div>
         <div class="container-fluid bg-white">
-            <h1 class="fw-bold text-center my-5 reveal-top">Balanced Lifestyle</h1>
-            <div class="container scroll-container">
-                <div class="container rounded-image-list">
-                    <figure class="text-center reveal-bottom">
-                        <img class="rounded-circle custom-list mx-auto" src="../Image/Image-2.jpg" alt="image-2">
-                        <figcaption class="text-center">Balance Lifestyle</figcaption>
-                    </figure>
-                    <figure class="text-center reveal-bottom">
-                        <img class="rounded-circle custom-list mx-auto" src="../Image/Image-3.jpg" alt="image-3">
-                        <figcaption class="text-center">Embracing health</figcaption>
-                    </figure>
-                    <figure class="text-center reveal-bottom">
-                        <img class="rounded-circle custom-list mx-auto" src="../Image/Image-4.jpg" alt="image-4">
-                        <figcaption class="text-center">Living in the moment</figcaption>
-                    </figure>
-                    <figure class="text-center reveal-bottom">
-                        <img class="rounded-circle custom-list mx-auto" src="../Image/Image-5.jpg" alt="image-5">
-                        <figcaption class="text-center">Whether you're into fitness:</figcaption>
-                    </figure>
-                    <figure class="text-center reveal-bottom">
-                        <img class="rounded-circle custom-list mx-auto" src="../Image/Image-5.jpg" alt="image-5">
-                        <figcaption class="text-center">Mindfulness</figcaption>
-                    </figure>
-                    <figure class="text-center reveal-bottom">
-                        <img class="rounded-circle custom-list mx-auto" src="../Image/Image-5.jpg" alt="image-5">
-                        <figcaption class="text-center">Looking to elevate your daily routines</figcaption>
-                    </figure>
-                </div>
-            </div>
-            <div id="slider" class="container-fluid bg-light-orange py-5 rounded-top">
+            <h1 class="fw-bold text-center mt-5 reveal-top">Balanced Lifestyle</h1>
+            <div id="slider" class="container-fluid rounded-top">
                 <div class="container">
-                    <div id="lifestyleSlide" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+                    <div id="lifestyleSlide" class="carousel slide reveal-bottom" data-bs-ride="carousel" data-bs-interval="5000">
                         <div class="carousel-indicators">
                             <button type="button" data-bs-target="#lifestyleSlide" data-bs-slide-to="0" class="active"></button>
                             <button type="button" data-bs-target="#lifestyleSlide" data-bs-slide-to="1"></button>
@@ -312,32 +346,60 @@
                             <span class="carousel-control-next-icon"></span>
                         </button>
                     </div>
-                    <p class="text-size">
-                        <strong><i>"Balanced Lifestyle"</i></strong>, yang ditampilkan melalui serangkaian gambar bulat yang menarik perhatian. Setiap gambar mencerminkan aspek penting dari hidup seimbang, dimulai dengan gambar pertama yang berfokus pada <strong><i>"Balance Lifestyle"</i></strong>, menyoroti pentingnya keseimbangan dalam kehidupan sehari-hari. Gambar kedua memperkenalkan konsep <strong><i>"Embracing health"</i></strong>, yang menggambarkan kesehatan sebagai fondasi dari gaya hidup yang seimbang.Selanjutnya, gambar ketiga yang bertuliskan.
-                    </p>
-                    <p class="text-size">
-                        <strong><i>"Living in the moment"</i></strong> mengajak kita untuk menghargai setiap momen dalam hidup kita. Gambar keempat, <strong><i>"Whether you're into fitness"</i></strong>, menjelaskan bahwa berolahraga adalah salah satu cara untuk mencapai keseimbangan. Gambar kelima menyoroti <strong><i>"Mindfulness"</i></strong>, sebuah praktik penting untuk menjaga kesehatan mental. Terakhir, gambar keenam dengan keterangan <strong><i>"Looking to elevate your daily routines"</i></strong> menginspirasi kita untuk terus meningkatkan rutinitas harian kita agar lebih seimbang dan memuaskan.
-                    </p>
+                </div>
+            </div>
+            <div class="container scroll-container">
+                <div class="container rounded-image-list">
+                    <figure class="text-center reveal-bottom" onclick="showContent('Balance Lifestyle')">
+                        <img class="rounded-circle custom-list mx-auto" src="../Image/Circle Image/Image-1.jpg" alt="image-2">
+                        <figcaption class="text-center">Balance Lifestyle</figcaption>
+                    </figure>
+                    <figure class="text-center reveal-bottom" onclick="showContent('Embracing health')">
+                        <img class="rounded-circle custom-list mx-auto" src="../Image/Circle Image/Image-2.jpg" alt="image-3">
+                        <figcaption class="text-center">Embracing health</figcaption>
+                    </figure>
+                    <figure class="text-center reveal-bottom" onclick="showContent('Living in the moment')">
+                        <img class="rounded-circle custom-list mx-auto" src="../Image/Circle Image/Image-3.jpg" alt="image-4">
+                        <figcaption class="text-center">Whether you're into fitness</figcaption>
+                    </figure>
+                    <figure class="text-center reveal-bottom" onclick="showContent('Fitness')">
+                        <img class="rounded-circle custom-list mx-auto" src="../Image/Circle Image/Image-4.jpg" alt="image-5">
+                        <figcaption class="text-center">Living in the moment</figcaption>
+                    </figure>
+                    <figure class="text-center reveal-bottom" onclick="showContent('Mindfulness')">
+                        <img class="rounded-circle custom-list mx-auto" src="../Image/Circle Image/Image-5.jpg" alt="image-5">
+                        <figcaption class="text-center">Mindfulness</figcaption>
+                    </figure>
+                    <figure class="text-center reveal-bottom" onclick="showContent('Daily routines')">
+                        <img class="rounded-circle custom-list mx-auto" src="../Image/Circle Image/Image-6.jpg" alt="image-5">
+                        <figcaption class="text-center">Looking to elevate your daily routines</figcaption>
+                    </figure>
+                </div>
+                <div id="overlay" class="overlay" style="display:none;">
+                    <div class="content-box">
+                        <h2 id="overlay-title"></h2>
+                        <p id="overlay-description"></p>
+                        <img id="overlay-image" class="img-grid-size-1" src="" alt="Overlay Image">
+                        <button class="my-3 custom-btn rounded-all text-white" onclick="hideContent()">Close</button>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="container-fluid bg-dark-orange py-5 rounded-top">
+        <div class="container-fluid bg-dark-orange py-5 rounded-top min-margin">
             <div class="container">
-                <h1 class="h1 my-5 text-center fw-bold">Latest in Wellness</h1>
+                <h1 class="h1 mb-5 text-center fw-bold reveal-top">Latest in Wellness</h1>
                 <div class="container image-grid">
-                    <img class="img-grid-size" src="../Image/Image-1.jpg" alt="">
-                    <img class="img-grid-size" src="../Image/Image-1.jpg" alt="">
-                    <img class="img-grid-size" src="../Image/Image-1.jpg" alt="">
-                    <img class="img-grid-size" src="../Image/Image-1.jpg" alt="">
-                    <img class="img-grid-size" src="../Image/Image-1.jpg" alt="">
-                    <img class="img-grid-size" src="../Image/Image-1.jpg" alt="">
-                    <img class="img-grid-size" src="../Image/Image-1.jpg" alt="">
-                    <img class="img-grid-size" src="../Image/Image-1.jpg" alt="">
-                    <img class="img-grid-size" src="../Image/Image-1.jpg" alt="">
+                    <img class="img-grid-size reveal-bottom" src="../Image/Latest Wellness/Method-1.jpg" alt="">
+                    <img class="img-grid-size reveal-bottom" src="../Image/Latest Wellness/Method-2.jpg" alt="">
+                    <img class="img-grid-size reveal-bottom" src="../Image/Latest Wellness/Method-3.jpg" alt="">
+                    <img class="img-grid-size reveal-bottom" src="../Image/Latest Wellness/Method-4.jpg" alt="">
+                    <img class="img-grid-size reveal-bottom" src="../Image/Latest Wellness/Method-5.jpg" alt="">
+                    <img class="img-grid-size reveal-bottom" src="../Image/Latest Wellness/Method-6.jpg" alt="">
+                    <div class="fill merge p-5 rounded-all reveal-bottom"></div>
                 </div>
             </div>
         </div>
-        <div class="container-fluid container-hover bg-dark rounded-top">
+        <div id="subscribe" class="container-fluid container-hover bg-dark rounded-top">
             <div class="container-md container-center pb-5">
                 <h1 class="text-center text-white text-shadow-primary fw-bold reveal-top my-5">Join Our Community</h1>
                 <img class=" img-thumbnail custom-image mb-3 rounded reveal-bottom" src="../Image/Image-6.jpg" alt="image-6">
@@ -351,7 +413,7 @@
         </div>
         <h1 class="fw-bold text-center my-5 reveal-top">Input The Form</h1>
         <div class="container-fluid pb-5 reveal-top">
-            <div class="container container-center flex-container border my-1 py-2">
+            <div class="container container-center border my-1 py-2">
                 <form class="full-width" action="/action_page.php">
                     <div class="row">
                         <div class="col-md-5">
@@ -375,27 +437,31 @@
                 </form>
             </div>
         </div>
-        <footer class="container-fluid bg-orange text-white py-4">
+        <footer id="contact" class="container-fluid bg-orange text-white py-4 reveal-bottom">
             <div class="container text-center">
-                <a class="mx-2 text-hover text-white text-decoration-none" href="#">
+                <a class="mx-2 text-hover text-white text-decoration-none" href="https://twitter.com/login">
                     <i class="fa-brands fa-twitter"></i>
                 </a>
-                <a class="mx-2 text-hover text-white text-decoration-none" href="#">
+                <a class="mx-2 text-hover text-white text-decoration-none" href="https://www.instagram.com/accounts/login/">
                     <i class="fa-brands fa-instagram"></i>
                 </a>
-                <a class="mx-2 text-hover text-white text-decoration-none" href="#">
+                <a class="mx-2 text-hover text-white text-decoration-none" href="https://www.youtube.com/account?hl=id">
                     <i class="fa-brands fa-youtube"></i>
                 </a>
-                <a class="mx-2 text-hover text-white text-decoration-none" href="#">
+                <a class="mx-2 text-hover text-white text-decoration-none" href="https://www.tiktok.com/login">
                     <i class="fa-brands fa-tiktok"></i>
                 </a>
-                <a class="mx-2 text-hover text-white text-decoration-none" href="#">
+                <a class="mx-2 text-hover text-white text-decoration-none" href="https://m.facebook.com/login/?locale=id_ID&refsrc=deprecated">
                     <i class="fa-brands fa-facebook"></i>
                 </a>
                 <p class="my-3">
                     <a class="text-white text-hover text-decoration-none" href="#">PRIVACY & POLICY</a> 
                     |
                     <a class="text-white text-hover text-decoration-none" href="#">TERMS OF US</a>
+                    <br>
+                    <a class="text-white text-hover text-decoration-none" href="mailto:someone@gmail.com">someone@gmail.com</a>
+                    |
+                    <a class="text-white text-hover text-decoration-none" href="tel:+6280000000000">+6280000000000</a>
                 </p>
                 <p>&copy; 2024 Lifestyle Vibes. All rights reserved.</p>
             </div>
@@ -420,6 +486,67 @@
         
             window.addEventListener('DOMContentLoaded', () => {
                 revealfunction();
+            });
+            
+            function showContent(title) {
+                let description = '';
+                let image = '';
+
+                switch (title) {
+                    case 'Balance Lifestyle':
+                        description = 'Menyoroti pentingnya keseimbangan dalam kehidupan sehari-hari. Gambar kedua memperkenalkan konsep.';
+                        image = '../Image/Circle Image/Image-1.jpg';
+                        break;
+                    case 'Embracing health':
+                        description = 'Menggambarkan kesehatan sebagai fondasi dari gaya hidup yang seimbang. Selanjutnya, gambar ketiga yang bertuliskan.';
+                        image = '../Image/Circle Image/Image-2.jpg';
+                        break;
+                    case 'Living in the moment':
+                        description = 'Mengajak kita untuk menghargai setiap momen dalam hidup kita.';
+                        image = '../Image/Circle Image/Image-3.jpg';
+                        break;
+                    case 'Fitness':
+                        description = 'Menjelaskan bahwa berolahraga adalah salah satu cara untuk mencapai keseimbangan. Gambar kelima menyoroti.';
+                        image = '../Image/Circle Image/Image-4.jpg';
+                        break;
+                    case 'Mindfulness':
+                        description = 'Sebuah praktik penting untuk menjaga kesehatan mental. Terakhir, gambar keenam dengan keterangan.';
+                        image = '../Image/Circle Image/Image-5.jpg';
+                        break;
+                    case 'Daily routines':
+                        description = 'Menginspirasi kita untuk terus meningkatkan rutinitas harian kita agar lebih seimbang dan memuaskan.';
+                        image = '../Image/Circle Image/Image-6.jpg';
+                        break;
+                    default:
+                        description = 'Deskripsi tidak tersedia.';
+                }
+
+                document.getElementById('overlay-title').innerText = title;
+                document.getElementById('overlay-description').innerText = description;
+                document.getElementById('overlay-image').src = image; 
+                document.getElementById('overlay').style.display = 'flex'; 
+            }
+
+            function hideContent() {
+                document.getElementById('overlay').style.display = 'none';
+            }
+
+            const contents = [
+                "Sleep Optimization - Sleep Hygiene Tips: Implement practices such as maintaining a consistent sleep schedule and creating a restful environment to improve sleep quality. - Sleep Technology: Consider using sleep trackers and apps that monitor sleep patterns to better understand and improve your sleep habits.",
+                "Fitness Trends - Functional Training: Focus on exercises that mimic daily activities, improving strength and mobility for everyday tasks. - Virtual Fitness Classes: Join live-streamed or recorded classes from the comfort of your home, offering flexibility and variety.",
+                "Mental Health Awareness - Teletherapy: Take advantage of online therapy sessions, making mental health support more accessible than ever. - Community Support Groups: Participate in virtual support groups to connect with others and share experiences in a safe environment.",
+                "Nutrition Insights - Plant-Based Diets: Emphasize the benefits of incorporating more plant-based meals into your diet for overall health and sustainability. - Intermittent Fasting: Explore the benefits of intermittent fasting for weight management and metabolic health.",
+                "Meditation Techniques - Guided Meditation Apps: Explore new apps offering personalized meditation sessions tailored to your mood and needs. - Mindfulness Practices: Incorporate mindfulness into daily activities, like mindful eating and walking, to enhance mental clarity and reduce stress.",
+                "Holistic Approaches - Alternative Therapies: Explore options like acupuncture, aromatherapy, and herbal medicine as complementary methods for enhancing well-being. - Nature Therapy: Spend time outdoors to boost mood and reduce stress through the benefits of nature."
+            ];
+
+            const images = document.querySelectorAll('.img-grid-size');
+            const fillMerge = document.querySelector('.fill.merge');
+
+            images.forEach((img, index) => {
+                img.addEventListener('click', () => {
+                    fillMerge.innerHTML = contents[index];
+                });
             });
         </script>
     </body>
